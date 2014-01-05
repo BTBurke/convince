@@ -1,0 +1,20 @@
+---
+# A playbook to install Yeoman, Grunt, Bower, Uglify, 
+
+- hosts: all
+  sudo: yes
+  tasks:
+   - name: Install Yeoman
+     npm: name=yo global=yes
+
+   - name: Install webapp generators
+     npm: name=generator-webapp global=yes
+
+   - name: Install AngularJS generator
+     npm: name=generator-angular global=yes
+
+   - name: Install Ruby
+     apt: pkg=ruby
+
+   - name: Install Compass
+     gem: name=compass state=latest

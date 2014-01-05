@@ -1,0 +1,8 @@
+---
+# A playbook to install Yeoman, Grunt, Bower, Uglify, 
+
+- hosts: all
+  sudo: yes
+  tasks:
+   - name: Install CoffeeScript
+     npm: name=coffee-script global=yes

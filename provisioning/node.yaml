@@ -1,0 +1,27 @@
+---
+# A playbook to install a few packages common to most NodeJS set ups.
+-  hosts: all
+   sudo: yes
+   vars:
+      node_version: 0.10.24 
+   tasks:
+    - name: Install Git
+      apt: pkg=git
+
+    - name: Install Build Essential
+      apt: pkg=build-essential
+
+    - name: Create Ansible cache directory
+      file: path=/var/local/ansible-cache state=directory 
+
+    - name: Get NPM binaries
+      get_url: dest=/var/local/ansible-cache url=http://nodejs.org/dist/v{{node_version}}/node-v{{node_version}}-linux-x64.tar.gz
+
+    - name: Unpack NPM
+      shell: tar xvz -C /usr/local/share/ -f /var/local/ansible-cache/node-v{{node_version}}-linux-x64.tar.gz creates=/usr/local/share/node-v{{node_version}}-linux-x64
+
+    - name: Configure NPM symlinks
+      shell: for f in node npm; do ln -s /usr/local/share/node-v{{node_version}}-linux-x64/bin/$f /usr/local/bin/$f; done; creates=/usr/local/bin/node
+
+    - name: Install Live Reload
+      npm: name=connect-livereload global=yes
