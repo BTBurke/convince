@@ -15,4 +15,8 @@
 # vboxadditions playbook will detect a mismatch between the host VBox version and Guest Addtitions on the box
 # and will update it automatically.  It's ok to run this multiple times, it won't do anything if the correct
 # version is installed      
-- include: vboxadditions.yaml 
+- include: vboxadditions.yaml
+- include: node.yaml
+- include: yeoman.yaml
+- include: coffee.yaml
+ 

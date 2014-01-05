@@ -1,9 +1,17 @@
-Skeleton - Vagrant + Ansible
+Convince
 ===
 
-This is another installment in my multi-part series of project skeletons.  This one sets you up for a generic Vagrant + Ansible development environment.  It includes:
+This is an experimental framework for creating data-driven slide decks using reveal.js and D3.  It's an AngularJS webapp that lets you author slide decks that include D3-generated interactive graphs and charts.
 
-* An amazing Vagrantfile that will cue up Anisble for devops goodness
-* An Ansible inventory file that works with a stock Vagrant set up
-* A vagrant.yaml file that contains the tasks you want to execute on vagrant up
-* An Ansible playbook that will update your Virtualbox Guest Additions if it's not the same version as your Virtualbox on the host
+Roadmap:
+1.  Basic authoring tools for creating simple slide presentations
+2.  Ability to insert D3-generated charts from JSON data sources
+3.  Presentation mode with D3-chart interactivity
+4.  Server-backed API for simultaneous editing by multiple users
+5.  API for retreiving live JSON data and updating chart in real-time
+6.  Ability to fork presentations
+7.  Review/commenting workflow
+8.  Interactive presentation mode allows audience to follow along and markup slides during the presentation (using websockets)
+9.  Metrics for evaluating how users view and interact with the material
+
+

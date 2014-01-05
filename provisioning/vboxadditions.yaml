@@ -41,7 +41,7 @@
       sudo: no
       when: hostV.stdout != guestV.stdout
 
-    - name: Restarting the VM without provisioning
-      local_action: command vagrant up --no-provision
+    - name: Restarting the VM
+      local_action: command vagrant up
       sudo: no
       when: hostV.stdout != guestV.stdout
